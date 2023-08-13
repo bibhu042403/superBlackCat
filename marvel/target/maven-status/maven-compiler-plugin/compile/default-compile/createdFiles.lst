@@ -1,0 +1,12 @@
+com/pareeksha/blackcat/marvel/dto/response/ApplicationFormDetailsDTO.class
+com/pareeksha/blackcat/marvel/dto/FormUrlsDTO.class
+com/pareeksha/blackcat/marvel/dto/response/AdmitCardDTO.class
+com/pareeksha/blackcat/marvel/dto/response/FormDetailDTO.class
+com/pareeksha/blackcat/marvel/dto/FeeDetailsDTO.class
+com/pareeksha/blackcat/marvel/dto/request/ResultRequestDTO.class
+com/pareeksha/blackcat/marvel/dto/request/ApplicationFormRequestDTO.class
+com/pareeksha/blackcat/marvel/dto/AgeLimitDTO.class
+com/pareeksha/blackcat/marvel/dto/ApiResponse.class
+com/pareeksha/blackcat/marvel/dto/response/ApplicationFormTableDTO.class
+com/pareeksha/blackcat/marvel/dto/request/AdmitCardRequestDTO.class
+com/pareeksha/blackcat/marvel/dto/response/ResultDetailsDTO.class

@@ -36,6 +36,7 @@ public class PareekshaFacade {
         return pareekshaService.getAdmitCard(examName);
     }
 
+    //get result
     public ResultDetailsDTO getResult(String examName) throws NoSuchAlgorithmException {
         return pareekshaService.getResult(examName);
     }

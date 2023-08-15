@@ -56,7 +56,7 @@ public class DBMgmtFacade {
     }
 
     public ResultDetails getResult(String examId){
-        Optional<ResultDetails> resultDetails = resultDetailsManager.findResultById(examId);
+        Optional<ResultDetails> resultDetails = resultDetailsManager.findResultByExamId(examId);
         return resultDetails.orElse(null);
     }
 

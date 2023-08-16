@@ -19,17 +19,17 @@ public class UploadDataController {
     @Autowired
     UploadDataFacade uploadDataFacade;
 
-    @PostMapping("/application")
+    @PostMapping(value = "/application")
     public void saveApplicationForm(@RequestBody ApplicationFormDetailsDTO applicationFormDetailsDTO){
         uploadDataFacade.saveApplicationFormDetails(applicationFormDetailsDTO);
     }
 
-    @PostMapping("/admitCard")
+    @PostMapping(value = "/admitCard")
     public void saveAdmitCard(@RequestBody AdmitCardDTO admitCardDTO){
         uploadDataFacade.saveAdmitCard(admitCardDTO);
     }
 
-    @PostMapping("/result")
+    @PostMapping(value = "/result")
     public void saveResult(@RequestBody ResultDetailsDTO resultDetailsDTO){
         uploadDataFacade.saveResult(resultDetailsDTO);
     }

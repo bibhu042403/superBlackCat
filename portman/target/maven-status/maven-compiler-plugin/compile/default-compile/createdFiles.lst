@@ -1,4 +1,5 @@
-com/pareeksha/blackcat/portman/controller/UploadDataController.class
+com/pareeksha/blackcat/portman/config/SpringFoxConfig.class
 com/pareeksha/blackcat/portman/PortmanApplication.class
-com/pareeksha/blackcat/portman/ServletInitializer.class
 com/pareeksha/blackcat/portman/controller/LandingPageController.class
+com/pareeksha/blackcat/portman/controller/UploadDataController.class
+com/pareeksha/blackcat/portman/ServletInitializer.class

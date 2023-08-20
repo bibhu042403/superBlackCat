@@ -9,4 +9,5 @@ public class ApplicationFormTableDTO {
     String examName;
     String applyUrl;
     Date startDate;
+    Date lastDate;
 }

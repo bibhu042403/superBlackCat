@@ -16,6 +16,8 @@ import com.pareeksha.blackcat.marvel.dto.response.ApplicationFormDetailsDTO;
 import com.pareeksha.blackcat.marvel.dto.response.ResultDetailsDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.security.NoSuchAlgorithmException;
@@ -31,7 +33,7 @@ public class UploadDataService {
     PareekshaInitilizer pareekshaInitilizer;
     static final ObjectMapper objectMapper = new ObjectMapper();
 
-    public void saveApplicationAndFormDetails(ApplicationFormDetailsDTO applicationFormDetailsDTO){
+    public ResponseEntity<String> saveApplicationAndFormDetails(ApplicationFormDetailsDTO applicationFormDetailsDTO){
 
         ApplicationFormDetails applicationFormDetails =  new ApplicationFormDetails();
         constructApplicationForm(applicationFormDetailsDTO, applicationFormDetails);
@@ -39,8 +41,11 @@ public class UploadDataService {
         saveFormDetails(applicationFormDetailsDTO.getExamName(), applicationFormDetailsDTO.getExamBoard(),
                         applicationFormDetailsDTO.getDepartment());
 
-        if(dbMgmtFacade.saveApplicationFormDetails(applicationFormDetails) !=null)
+        if(dbMgmtFacade.saveApplicationFormDetails(applicationFormDetails) !=null) {
             log.info("ApplicationForm has been saved successfully!");
+            return new ResponseEntity<>("Application uploaded successfully!", HttpStatus.OK);
+        }
+        return new ResponseEntity<>("Oops! Data not saved", HttpStatus.BAD_REQUEST);
     }
 
     public void saveAdmitCard(AdmitCardDTO admitCardDTO){

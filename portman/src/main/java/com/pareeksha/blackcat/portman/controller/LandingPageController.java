@@ -11,6 +11,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/api")
 @Slf4j
 public class LandingPageController {
@@ -22,6 +23,7 @@ public class LandingPageController {
         return "Success";
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping(value = "top/ten/application")
     public List<ApplicationFormTableDTO> getAllFormDetails() {
         return pareekshaFacade.getTopTenApplication();

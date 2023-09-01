@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/user")
 @CrossOrigin("*")
 @Slf4j
-public class UserController {
+public class AdminController {
 
     @Autowired
     UserFacade userFacade;

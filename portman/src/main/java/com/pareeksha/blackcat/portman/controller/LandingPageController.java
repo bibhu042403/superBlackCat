@@ -1,6 +1,7 @@
 package com.pareeksha.blackcat.portman.controller;
 
 import com.pareeksha.blackcat.avenger.facade.PareekshaFacade;
+import com.pareeksha.blackcat.hunter.facade.DBMgmtFacade;
 import com.pareeksha.blackcat.marvel.dto.response.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,9 @@ public class LandingPageController {
 
     @Autowired
     PareekshaFacade pareekshaFacade;
+
+    @Autowired
+    DBMgmtFacade dbMgmtFacade;
     @GetMapping(value = "/test")
     public String getStatus(){
         return "Success";
@@ -55,6 +59,11 @@ public class LandingPageController {
     @GetMapping(value = "/fetch/result")
     public ResultDetailsDTO getResult(@RequestParam String examName) throws NoSuchAlgorithmException {
         return pareekshaFacade.getResult(examName);
+    }
+
+    @GetMapping(value = "/allApplication")
+    public List<ApplicationFormDetailsDTO> fetchAllApplication(){
+        return pareekshaFacade.getAllApp();
     }
 
 }

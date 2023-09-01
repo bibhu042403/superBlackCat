@@ -1,5 +1,6 @@
 com/pareeksha/blackcat/portman/PortmanApplication.class
 com/pareeksha/blackcat/portman/controller/LandingPageController.class
 com/pareeksha/blackcat/portman/controller/UploadDataController.class
+com/pareeksha/blackcat/portman/controller/UserController.class
 com/pareeksha/blackcat/portman/controller/ImageProcessingController.class
 com/pareeksha/blackcat/portman/ServletInitializer.class

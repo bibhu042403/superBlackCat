@@ -1,9 +1,6 @@
 package com.pareeksha.blackcat.hunter.facade;
 
-import com.pareeksha.blackcat.hunter.entity.AdmitCard;
-import com.pareeksha.blackcat.hunter.entity.ApplicationFormDetails;
-import com.pareeksha.blackcat.hunter.entity.FormDetails;
-import com.pareeksha.blackcat.hunter.entity.ResultDetails;
+import com.pareeksha.blackcat.hunter.entity.*;
 import com.pareeksha.blackcat.hunter.manager.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +27,9 @@ public class DBMgmtFacade {
 
     @Autowired
     SystemPropertyManagerImpl systemPropertyManager;
+
+    @Autowired
+    UserDetailManagerImpl userDetailManager;
 
     public static final int dataCount = 10;
 
@@ -98,6 +98,19 @@ public class DBMgmtFacade {
             log.info("Exception occurred while saving result");
         }
         return null;
+    }
+
+
+    public Optional<UserDetail> getUserDetail(String userName){
+        return userDetailManager.findByUserName(userName);
+    }
+
+    public UserDetail saveUser(UserDetail userDetail){
+        return userDetailManager.save(userDetail);
+    }
+
+    public Iterable<ApplicationFormDetails> getAppList(){
+        return applicationFormDetailsManager.findAll();
     }
 
 }

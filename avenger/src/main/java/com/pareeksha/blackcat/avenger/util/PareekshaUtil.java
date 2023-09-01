@@ -31,4 +31,6 @@ public class PareekshaUtil {
 //        String str = "SSC CHSL 2023 fjkhgh gfghjkjhg ghjjhghjk ghjkjhg";
 //        System.out.println(generateHashFromString(str));
 //    }
+
+
 }

@@ -24,12 +24,12 @@ public class UploadDataController {
     }
 
     @PostMapping(value = "/admitCard")
-    public void saveAdmitCard(@RequestBody AdmitCardDTO admitCardDTO){
-        uploadDataFacade.saveAdmitCard(admitCardDTO);
+    public ResponseEntity<String> saveAdmitCard(@RequestBody AdmitCardDTO admitCardDTO){
+        return uploadDataFacade.saveAdmitCard(admitCardDTO);
     }
 
     @PostMapping(value = "/result")
-    public void saveResult(@RequestBody ResultDetailsDTO resultDetailsDTO){
-        uploadDataFacade.saveResult(resultDetailsDTO);
+    public ResponseEntity<String> saveResult(@RequestBody ResultDetailsDTO resultDetailsDTO){
+        return uploadDataFacade.saveResult(resultDetailsDTO);
     }
 }

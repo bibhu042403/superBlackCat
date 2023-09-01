@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.imageio.IIOImage;
 import javax.imageio.ImageIO;
@@ -15,7 +16,6 @@ import javax.imageio.stream.ImageOutputStream;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.net.URL;
 import java.util.Iterator;
 
 @Service
@@ -23,11 +23,11 @@ import java.util.Iterator;
 public class ImageService {
 
 
-    public ResponseEntity<byte[]> processImage(String imageUrl, int width, int height, int targetSizeKB)  {
+    public ResponseEntity<byte[]> processImage(MultipartFile file, int width, int height, int targetSizeKB)  {
 
         try{
             // Load the original image
-            BufferedImage originalImage = ImageIO.read(new URL(imageUrl));
+            BufferedImage originalImage = ImageIO.read(file.getInputStream());
 
             // Resize the image
             BufferedImage resizedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);

@@ -3,8 +3,11 @@
 /Users/bibhubhushan/Documents/blackcat/superBlackCat/avenger/src/main/java/com/pareeksha/blackcat/avenger/facade/UploadDataFacade.java
 /Users/bibhubhushan/Documents/blackcat/superBlackCat/avenger/src/main/java/com/pareeksha/blackcat/avenger/util/JmapperUtil.java
 /Users/bibhubhushan/Documents/blackcat/superBlackCat/avenger/src/main/java/com/pareeksha/blackcat/avenger/util/PareekshaInitilizer.java
-/Users/bibhubhushan/Documents/blackcat/superBlackCat/avenger/src/main/java/com/pareeksha/blackcat/avenger/service/PareekshaService.java
 /Users/bibhubhushan/Documents/blackcat/superBlackCat/avenger/src/main/java/com/pareeksha/blackcat/avenger/constants/PareekshaConstant.java
-/Users/bibhubhushan/Documents/blackcat/superBlackCat/avenger/src/main/java/com/pareeksha/blackcat/avenger/service/ImageService.java
 /Users/bibhubhushan/Documents/blackcat/superBlackCat/avenger/src/main/java/com/pareeksha/blackcat/avenger/util/PareekshaUtil.java
 /Users/bibhubhushan/Documents/blackcat/superBlackCat/avenger/src/main/java/com/pareeksha/blackcat/avenger/facade/ImageFacade.java
+/Users/bibhubhushan/Documents/blackcat/superBlackCat/avenger/src/main/java/com/pareeksha/blackcat/avenger/facade/UserFacade.java
+/Users/bibhubhushan/Documents/blackcat/superBlackCat/avenger/src/main/java/com/pareeksha/blackcat/avenger/service/EmailService.java
+/Users/bibhubhushan/Documents/blackcat/superBlackCat/avenger/src/main/java/com/pareeksha/blackcat/avenger/service/PareekshaService.java
+/Users/bibhubhushan/Documents/blackcat/superBlackCat/avenger/src/main/java/com/pareeksha/blackcat/avenger/service/UserService.java
+/Users/bibhubhushan/Documents/blackcat/superBlackCat/avenger/src/main/java/com/pareeksha/blackcat/avenger/service/ImageService.java

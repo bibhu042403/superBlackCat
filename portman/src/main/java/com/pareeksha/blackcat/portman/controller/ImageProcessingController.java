@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -14,17 +15,17 @@ public class ImageProcessingController {
 
     @Autowired
     ImageFacade imageFacade;
-    @GetMapping("/resize")
-    public ResponseEntity<byte[]> resizeAndCompressImage(@RequestParam("url") String imageUrl,
+    @PostMapping("/resize")
+    public ResponseEntity<byte[]> resizeAndCompressImage( @RequestParam("file") MultipartFile file,
                                                          @RequestParam("width") int width,
                                                          @RequestParam("height") int height,
                                                          @RequestParam("targetSizeKB") int targetSizeKB) {
 
             // Specify the file:// protocol for local file URLs
-            if (!imageUrl.startsWith("file://")) {
-                imageUrl = "file://" + imageUrl;
-            }
-          return imageFacade.processImage(imageUrl, width, height, targetSizeKB);
+//            if (!imageUrl.startsWith("file://")) {
+//                imageUrl = "file://" + imageUrl;
+//            }
+          return imageFacade.processImage(file, width, height, targetSizeKB);
     }
 
 }

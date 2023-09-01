@@ -43,12 +43,12 @@ public class UploadDataService {
 
         if(dbMgmtFacade.saveApplicationFormDetails(applicationFormDetails) !=null) {
             log.info("ApplicationForm has been saved successfully!");
-            return new ResponseEntity<>("Application uploaded successfully!", HttpStatus.OK);
+            return new ResponseEntity<>(PareekshaConstant.APP_UPLOADED, HttpStatus.OK);
         }
-        return new ResponseEntity<>("Oops! Data not saved", HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(PareekshaConstant.UPLOAD_FAIL, HttpStatus.BAD_REQUEST);
     }
 
-    public void saveAdmitCard(AdmitCardDTO admitCardDTO){
+    public ResponseEntity<String> saveAdmitCard(AdmitCardDTO admitCardDTO){
         String examId = generateToHash(admitCardDTO.getExamName());
         AdmitCard admitCard = JmapperUtil.constructAdmitCard(admitCardDTO);
         admitCard.setExamId(examId);
@@ -56,11 +56,14 @@ public class UploadDataService {
         //saving form details for admit card
         saveFormDetails(admitCardDTO.getExamName(), PareekshaConstant.ADMIT_BOARD, PareekshaConstant.ADMIT_DEPT);
 
-        if(dbMgmtFacade.saveAdmitCard(admitCard) != null)
+        if(dbMgmtFacade.saveAdmitCard(admitCard) != null){
             log.info("Admit card has been saved successfully!");
+            return new ResponseEntity<>(PareekshaConstant.ADMIT_UPLOADED, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(PareekshaConstant.UPLOAD_FAIL, HttpStatus.BAD_REQUEST);
     }
 
-    public void saveResult(ResultDetailsDTO resultDetailsDTO){
+    public ResponseEntity<String> saveResult(ResultDetailsDTO resultDetailsDTO){
         String examId = generateToHash(resultDetailsDTO.getExamName());
         ResultDetails resultDetails = JmapperUtil.constructResult(resultDetailsDTO);
         resultDetails.setExamId(examId);
@@ -68,8 +71,11 @@ public class UploadDataService {
         //saving form details for result
         saveFormDetails(resultDetailsDTO.getExamName(), PareekshaConstant.RESULT_BOARD, PareekshaConstant.RESULT_DEPT);
 
-        if(dbMgmtFacade.saveResult(resultDetails) != null)
+        if(dbMgmtFacade.saveResult(resultDetails) != null){
             log.info("Result details have been saved successfully!");
+            return new ResponseEntity<>(PareekshaConstant.RESULT_UPLOADED, HttpStatus.ACCEPTED);
+        }
+        return new ResponseEntity<>(PareekshaConstant.UPLOAD_FAIL, HttpStatus.BAD_REQUEST);
     }
 
     public void constructApplicationForm(ApplicationFormDetailsDTO applicationFormDetailsDTO,

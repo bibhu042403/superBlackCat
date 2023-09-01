@@ -17,11 +17,11 @@ public class UploadDataFacade {
        return uploadDataService.saveApplicationAndFormDetails(applicationFormDetailsDTO);
     }
 
-    public void saveAdmitCard(AdmitCardDTO admitCardDTO){
-        uploadDataService.saveAdmitCard(admitCardDTO);
+    public ResponseEntity<String> saveAdmitCard(AdmitCardDTO admitCardDTO){
+        return uploadDataService.saveAdmitCard(admitCardDTO);
     }
 
-    public void saveResult(ResultDetailsDTO resultDetailsDTO){
-        uploadDataService.saveResult(resultDetailsDTO);
+    public ResponseEntity<String> saveResult(ResultDetailsDTO resultDetailsDTO){
+        return uploadDataService.saveResult(resultDetailsDTO);
     }
 }

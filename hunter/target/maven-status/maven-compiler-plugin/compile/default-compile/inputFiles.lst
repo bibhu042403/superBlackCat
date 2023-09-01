@@ -13,6 +13,9 @@
 /Users/bibhubhushan/Documents/blackcat/superBlackCat/hunter/src/main/java/com/pareeksha/blackcat/hunter/entity/SystemProperty.java
 /Users/bibhubhushan/Documents/blackcat/superBlackCat/hunter/src/main/java/com/pareeksha/blackcat/hunter/dao/FormDetailsRepository.java
 /Users/bibhubhushan/Documents/blackcat/superBlackCat/hunter/src/main/java/com/pareeksha/blackcat/hunter/manager/ApplicationFormDetailsManagerImpl.java
+/Users/bibhubhushan/Documents/blackcat/superBlackCat/hunter/src/main/java/com/pareeksha/blackcat/hunter/dao/UserDetailRepository.java
+/Users/bibhubhushan/Documents/blackcat/superBlackCat/hunter/src/main/java/com/pareeksha/blackcat/hunter/manager/UserDetailManagerImpl.java
 /Users/bibhubhushan/Documents/blackcat/superBlackCat/hunter/src/main/java/com/pareeksha/blackcat/hunter/manager/SystemPropertyManagerImpl.java
 /Users/bibhubhushan/Documents/blackcat/superBlackCat/hunter/src/main/java/com/pareeksha/blackcat/hunter/sql/GenericManager.java
+/Users/bibhubhushan/Documents/blackcat/superBlackCat/hunter/src/main/java/com/pareeksha/blackcat/hunter/entity/UserDetail.java
 /Users/bibhubhushan/Documents/blackcat/superBlackCat/hunter/src/main/java/com/pareeksha/blackcat/hunter/manager/ResultDetailsManagerImpl.java

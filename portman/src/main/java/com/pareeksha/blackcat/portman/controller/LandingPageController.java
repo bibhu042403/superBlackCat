@@ -61,9 +61,4 @@ public class LandingPageController {
         return pareekshaFacade.getResult(examName);
     }
 
-    @GetMapping(value = "/allApplication")
-    public List<ApplicationFormDetailsDTO> fetchAllApplication(){
-        return pareekshaFacade.getAllApp();
-    }
-
 }

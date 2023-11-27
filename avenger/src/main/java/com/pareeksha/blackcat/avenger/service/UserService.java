@@ -5,6 +5,7 @@ import com.pareeksha.blackcat.hunter.entity.UserDetail;
 import com.pareeksha.blackcat.hunter.facade.DBMgmtFacade;
 import com.pareeksha.blackcat.marvel.dto.LogInDTO;
 import com.pareeksha.blackcat.marvel.dto.RegisterDTO;
+import com.pareeksha.blackcat.marvel.dto.response.UserPermitDTO;
 import com.pareeksha.blackcat.marvel.enums.UserEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,8 @@ import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 
 import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -83,5 +86,26 @@ public class UserService {
             return new ResponseEntity<>(PareekshaConstant.WRONG_PASS, HttpStatus.CONFLICT);
         }
         return new ResponseEntity<>(PareekshaConstant.DO_SIGNUP, HttpStatus.CONFLICT);
+    }
+
+    public List<UserPermitDTO> getAllOnHoldUser(){
+        Iterable<UserDetail> userDetailsList = dbMgmtFacade.getAllUser();
+        List<UserPermitDTO> userList = new ArrayList<>();
+
+        userDetailsList.forEach(userDetail -> {
+            if(userDetail.getEnable() <= 0)
+                userList.add(buildUserPermitDTO(userDetail));
+        });
+
+        return userList;
+    }
+
+    private UserPermitDTO buildUserPermitDTO(UserDetail userDetail){
+        UserPermitDTO userPermitDTO = new UserPermitDTO();
+
+        userPermitDTO.setUserName(userDetail.getUserName());
+        userPermitDTO.setFName(userDetail.getFName());
+
+        return userPermitDTO;
     }
 }

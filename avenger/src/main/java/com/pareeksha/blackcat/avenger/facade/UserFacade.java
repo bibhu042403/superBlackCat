@@ -3,12 +3,15 @@ package com.pareeksha.blackcat.avenger.facade;
 import com.pareeksha.blackcat.avenger.service.UserService;
 import com.pareeksha.blackcat.marvel.dto.LogInDTO;
 import com.pareeksha.blackcat.marvel.dto.RegisterDTO;
+import com.pareeksha.blackcat.marvel.dto.response.UserPermitDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 @Slf4j
@@ -43,5 +46,9 @@ public class UserFacade {
 
         return StringUtils.isNotEmpty(logInDTO.getUserName())
                 && StringUtils.isNotEmpty(logInDTO.getPassWord());
+    }
+
+    public List<UserPermitDTO> getAllOnHoldUser(){
+        return userService.getAllOnHoldUser();
     }
 }

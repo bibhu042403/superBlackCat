@@ -113,4 +113,7 @@ public class DBMgmtFacade {
         return applicationFormDetailsManager.findAll();
     }
 
+    public Iterable<UserDetail> getAllUser(){
+        return userDetailManager.findAll();
+    }
 }

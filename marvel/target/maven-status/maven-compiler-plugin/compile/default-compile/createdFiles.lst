@@ -6,6 +6,7 @@ com/pareeksha/blackcat/marvel/dto/FeeDetailsDTO.class
 com/pareeksha/blackcat/marvel/dto/request/ResultRequestDTO.class
 com/pareeksha/blackcat/marvel/dto/ApiResponse.class
 com/pareeksha/blackcat/marvel/dto/LogInDTO.class
+com/pareeksha/blackcat/marvel/dto/response/UserPermitDTO.class
 com/pareeksha/blackcat/marvel/dto/FormUrlsDTO.class
 com/pareeksha/blackcat/marvel/dto/request/ApplicationFormRequestDTO.class
 com/pareeksha/blackcat/marvel/dto/AgeLimitDTO.class

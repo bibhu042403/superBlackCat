@@ -78,7 +78,7 @@
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-rs-security-cors</artifactId>
-			<version>4.0.3</version>
+			<version>3.5.5</version>
 		</dependency>
 
 		<dependency>

@@ -1,5 +1,6 @@
 package com.pareeksha.blackcat.marvel.dto.response;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.pareeksha.blackcat.marvel.dto.AgeLimitDTO;
 import com.pareeksha.blackcat.marvel.dto.FeeDetailsDTO;
@@ -9,6 +10,7 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ApplicationFormDetailsDTO {
     String examId;
     String examName;

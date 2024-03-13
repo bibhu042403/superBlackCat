@@ -41,4 +41,8 @@ public class PareekshaFacade {
         return pareekshaService.getResult(examName);
     }
 
+    public List<ApplicationFormDetailsDTO> getAllApp(){
+        return pareekshaService.getAllApp();
+    }
+
 }

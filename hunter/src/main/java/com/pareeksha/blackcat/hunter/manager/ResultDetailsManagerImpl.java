@@ -29,7 +29,7 @@ public class ResultDetailsManagerImpl extends GenericManager<ResultDetails, Stri
         return Optional.of(page.getContent());
     }
 
-    public Optional<ResultDetails> findResultById(String examId){
-        return resultDetailsRepository.findById(examId);
+    public Optional<ResultDetails> findResultByExamId(String examId){
+        return resultDetailsRepository.findByExamId(examId);
     }
 }

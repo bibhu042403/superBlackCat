@@ -8,6 +8,7 @@ import com.pareeksha.blackcat.avenger.util.PareekshaUtil;
 import com.pareeksha.blackcat.hunter.entity.AdmitCard;
 import com.pareeksha.blackcat.hunter.entity.ApplicationFormDetails;
 import com.pareeksha.blackcat.hunter.entity.ResultDetails;
+import com.pareeksha.blackcat.hunter.entity.UserDetail;
 import com.pareeksha.blackcat.hunter.facade.DBMgmtFacade;
 import com.pareeksha.blackcat.marvel.dto.AgeLimitDTO;
 import com.pareeksha.blackcat.marvel.dto.FeeDetailsDTO;
@@ -19,6 +20,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -93,5 +95,20 @@ public class PareekshaService {
         String examId = PareekshaUtil.generateHashFromString(examName);
         ResultDetails resultDetails = dbMgmtFacade.getResult(examId);
         return JmapperUtil.constructResultDTO(resultDetails);
+    }
+
+    public List<ApplicationFormDetailsDTO> getAllApp(){
+        Iterable<ApplicationFormDetails> appList = dbMgmtFacade.getAppList();
+
+        List<ApplicationFormDetailsDTO> appDtoList = new ArrayList<>();
+        appList.forEach(application -> {
+            try {
+                ApplicationFormDetailsDTO appDto = constructApplicationFormDTO(application);
+                appDtoList.add(appDto);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        return appDtoList;
     }
 }

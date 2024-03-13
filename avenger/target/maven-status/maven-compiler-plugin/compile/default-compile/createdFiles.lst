@@ -1,7 +1,13 @@
 com/pareeksha/blackcat/avenger/util/PareekshaInitilizer.class
 com/pareeksha/blackcat/avenger/constants/PareekshaConstant.class
 com/pareeksha/blackcat/avenger/facade/UploadDataFacade.class
+com/pareeksha/blackcat/avenger/facade/WebFacade.class
 com/pareeksha/blackcat/avenger/util/JmapperUtil.class
+com/pareeksha/blackcat/avenger/service/EmailService.class
+com/pareeksha/blackcat/avenger/service/ImageService.class
+com/pareeksha/blackcat/avenger/service/UserService.class
+com/pareeksha/blackcat/avenger/facade/UserFacade.class
+com/pareeksha/blackcat/avenger/facade/ImageFacade.class
 com/pareeksha/blackcat/avenger/service/UploadDataService.class
 com/pareeksha/blackcat/avenger/util/PareekshaUtil.class
 com/pareeksha/blackcat/avenger/facade/PareekshaFacade.class

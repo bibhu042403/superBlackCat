@@ -23,12 +23,6 @@
 	</properties>
 
 	<dependencies>
-<!--		&lt;!&ndash; Spring Boot Starter Actuator &ndash;&gt;-->
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.boot</groupId>-->
-<!--			<artifactId>spring-boot-starter-actuator</artifactId>-->
-<!--			<version>${spring.boot.version}</version>-->
-<!--		</dependency>-->
 
 		<!-- Spring Boot Starter Data JPA -->
 		<dependency>
@@ -50,13 +44,6 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.33</version>
 		</dependency>
-
-<!--		&lt;!&ndash; Micrometer Registry Prometheus &ndash;&gt;-->
-<!--		<dependency>-->
-<!--			<groupId>io.micrometer</groupId>-->
-<!--			<artifactId>micrometer-registry-prometheus</artifactId>-->
-<!--			<version>1.11.2</version>-->
-<!--		</dependency>-->
 
 		<!-- Lombok -->
 		<dependency>
@@ -85,6 +72,13 @@
 			<groupId>com.pareeksha.blackcat</groupId>
 			<artifactId>avenger</artifactId>
 			<version>${revision}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-rs-security-cors -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-rs-security-cors</artifactId>
+			<version>3.5.5</version>
 		</dependency>
 
 		<dependency>

@@ -136,6 +136,7 @@ public class PareekshaInitilizer {
         ApplicationFormTableDTO applicationFormTableDTO = new ApplicationFormTableDTO();
         applicationFormTableDTO.setExamName(applicationFormDetails.getExamName());
         applicationFormTableDTO.setStartDate(applicationFormDetails.getStartDate());
+        applicationFormTableDTO.setLastDate(applicationFormDetails.getLastDate());
 
         FormUrlsDTO formUrlsDTO = objectMapper.readValue(applicationFormDetails.getUrl(), FormUrlsDTO.class);
         applicationFormTableDTO.setApplyUrl(formUrlsDTO.getApplyUrl());

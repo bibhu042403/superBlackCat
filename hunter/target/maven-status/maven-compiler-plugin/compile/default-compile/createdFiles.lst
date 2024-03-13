@@ -8,10 +8,13 @@ com/pareeksha/blackcat/hunter/entity/FormDetails.class
 com/pareeksha/blackcat/hunter/entity/ApplicationFormDetails.class
 com/pareeksha/blackcat/hunter/sql/GenericManager.class
 com/pareeksha/blackcat/hunter/entity/AdmitCard.class
+com/pareeksha/blackcat/hunter/dao/UserDetailRepository.class
 com/pareeksha/blackcat/hunter/manager/ApplicationFormDetailsManagerImpl.class
 com/pareeksha/blackcat/hunter/entity/ResultDetails.class
 com/pareeksha/blackcat/hunter/manager/FormDetailsManagerImpl.class
+com/pareeksha/blackcat/hunter/entity/UserDetail.class
 com/pareeksha/blackcat/hunter/facade/DBMgmtFacade.class
+com/pareeksha/blackcat/hunter/manager/UserDetailManagerImpl.class
 com/pareeksha/blackcat/hunter/manager/ResultDetailsManagerImpl.class
 com/pareeksha/blackcat/hunter/dao/FormDetailsRepository.class
 com/pareeksha/blackcat/hunter/dao/ApplicationFormDetailsRepository.class

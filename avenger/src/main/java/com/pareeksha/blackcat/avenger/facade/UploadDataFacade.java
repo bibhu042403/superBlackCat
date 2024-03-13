@@ -1,27 +1,16 @@
 package com.pareeksha.blackcat.avenger.facade;
 
-import com.pareeksha.blackcat.avenger.service.UploadDataService;
 import com.pareeksha.blackcat.marvel.dto.response.AdmitCardDTO;
 import com.pareeksha.blackcat.marvel.dto.response.ApplicationFormDetailsDTO;
 import com.pareeksha.blackcat.marvel.dto.response.ResultDetailsDTO;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
 
-@Component
-public class UploadDataFacade {
-    @Autowired
-    UploadDataService uploadDataService;
+import javax.ws.rs.core.Response;
 
-    public ResponseEntity<String> saveApplicationFormDetails(ApplicationFormDetailsDTO applicationFormDetailsDTO){
-       return uploadDataService.saveApplicationAndFormDetails(applicationFormDetailsDTO);
-    }
+public interface UploadDataFacade {
 
-    public ResponseEntity<String> saveAdmitCard(AdmitCardDTO admitCardDTO){
-        return uploadDataService.saveAdmitCard(admitCardDTO);
-    }
+    Response saveApplicationFormDetails(ApplicationFormDetailsDTO applicationFormDetailsDTO);
 
-    public ResponseEntity<String> saveResult(ResultDetailsDTO resultDetailsDTO){
-        return uploadDataService.saveResult(resultDetailsDTO);
-    }
+    Response saveAdmitCard(AdmitCardDTO admitCardDTO);
+
+    Response saveResult(ResultDetailsDTO resultDetailsDTO);
 }

@@ -3,37 +3,39 @@ package com.pareeksha.blackcat.avenger.service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pareeksha.blackcat.avenger.constants.PareekshaConstant;
+import com.pareeksha.blackcat.avenger.facade.UploadDataFacade;
 import com.pareeksha.blackcat.avenger.util.JmapperUtil;
-import com.pareeksha.blackcat.avenger.util.PareekshaInitilizer;
 import com.pareeksha.blackcat.avenger.util.PareekshaUtil;
 import com.pareeksha.blackcat.hunter.entity.AdmitCard;
 import com.pareeksha.blackcat.hunter.entity.ApplicationFormDetails;
 import com.pareeksha.blackcat.hunter.entity.FormDetails;
 import com.pareeksha.blackcat.hunter.entity.ResultDetails;
 import com.pareeksha.blackcat.hunter.facade.DBMgmtFacade;
+import com.pareeksha.blackcat.marvel.constants.ErrorConstants;
 import com.pareeksha.blackcat.marvel.dto.response.AdmitCardDTO;
 import com.pareeksha.blackcat.marvel.dto.response.ApplicationFormDetailsDTO;
 import com.pareeksha.blackcat.marvel.dto.response.ResultDetailsDTO;
+import com.pareeksha.blackcat.marvel.utils.WebAppUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import javax.ws.rs.core.Response;
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 
 @Service
 @Slf4j
-public class UploadDataService {
+public class UploadDataService implements UploadDataFacade {
 
     @Autowired
     DBMgmtFacade dbMgmtFacade;
     @Autowired
-    PareekshaInitilizer pareekshaInitilizer;
+    WebAppUtils webAppUtils;
     static final ObjectMapper objectMapper = new ObjectMapper();
 
-    public ResponseEntity<String> saveApplicationAndFormDetails(ApplicationFormDetailsDTO applicationFormDetailsDTO){
+    @Override
+    public Response saveApplicationFormDetails(ApplicationFormDetailsDTO applicationFormDetailsDTO){
 
         ApplicationFormDetails applicationFormDetails =  new ApplicationFormDetails();
         constructApplicationForm(applicationFormDetailsDTO, applicationFormDetails);
@@ -43,12 +45,13 @@ public class UploadDataService {
 
         if(dbMgmtFacade.saveApplicationFormDetails(applicationFormDetails) !=null) {
             log.info("ApplicationForm has been saved successfully!");
-            return new ResponseEntity<>(PareekshaConstant.APP_UPLOADED, HttpStatus.OK);
+            return webAppUtils.buildSuccessResponse("SUCCESS");
         }
-        return new ResponseEntity<>(PareekshaConstant.UPLOAD_FAIL, HttpStatus.BAD_REQUEST);
+        return webAppUtils.buildErrorResponse("FAILURE", ErrorConstants.SERVER_ERROR);
     }
 
-    public ResponseEntity<String> saveAdmitCard(AdmitCardDTO admitCardDTO){
+    @Override
+    public Response saveAdmitCard(AdmitCardDTO admitCardDTO){
         String examId = generateToHash(admitCardDTO.getExamName());
         AdmitCard admitCard = JmapperUtil.constructAdmitCard(admitCardDTO);
         admitCard.setExamId(examId);
@@ -58,12 +61,13 @@ public class UploadDataService {
 
         if(dbMgmtFacade.saveAdmitCard(admitCard) != null){
             log.info("Admit card has been saved successfully!");
-            return new ResponseEntity<>(PareekshaConstant.ADMIT_UPLOADED, HttpStatus.OK);
+            return webAppUtils.buildSuccessResponse("SUCCESS");
         }
-        return new ResponseEntity<>(PareekshaConstant.UPLOAD_FAIL, HttpStatus.BAD_REQUEST);
+        return webAppUtils.buildErrorResponse("FAILURE", ErrorConstants.SERVER_ERROR);
     }
 
-    public ResponseEntity<String> saveResult(ResultDetailsDTO resultDetailsDTO){
+    @Override
+    public Response saveResult(ResultDetailsDTO resultDetailsDTO){
         String examId = generateToHash(resultDetailsDTO.getExamName());
         ResultDetails resultDetails = JmapperUtil.constructResult(resultDetailsDTO);
         resultDetails.setExamId(examId);
@@ -73,9 +77,9 @@ public class UploadDataService {
 
         if(dbMgmtFacade.saveResult(resultDetails) != null){
             log.info("Result details have been saved successfully!");
-            return new ResponseEntity<>(PareekshaConstant.RESULT_UPLOADED, HttpStatus.ACCEPTED);
+            return webAppUtils.buildSuccessResponse("SUCCESS");
         }
-        return new ResponseEntity<>(PareekshaConstant.UPLOAD_FAIL, HttpStatus.BAD_REQUEST);
+        return webAppUtils.buildErrorResponse("FAILURE", ErrorConstants.SERVER_ERROR);
     }
 
     public void constructApplicationForm(ApplicationFormDetailsDTO applicationFormDetailsDTO,

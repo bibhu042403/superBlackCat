@@ -74,6 +74,13 @@
 			<version>${revision}</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-rs-security-cors -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-rs-security-cors</artifactId>
+			<version>4.0.3</version>
+		</dependency>
+
 		<dependency>
 			<groupId>com.pareeksha.blackcat</groupId>
 			<artifactId>marvel</artifactId>

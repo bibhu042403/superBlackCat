@@ -93,6 +93,14 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
 		</dependency>
-
 	</dependencies>
+
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>superBlackCat</name>
+			<url>https://maven.pkg.github.com/bibhu042403/superBlackCat</url>
+		</repository>
+	</distributionManagement>
+
 </project>

@@ -14,6 +14,16 @@
     <remote-repository>
       <option name="id" value="github" />
       <option name="name" value="GitHub BibhuBhushan Apache Maven Packages" />
+      <option name="url" value="https://maven.pkg.github.com/bibhu042403/superBlackCat" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="github" />
+      <option name="name" value="superBlackCat" />
+      <option name="url" value="https://maven.pkg.github.com/bibhu042403/superBlackCat" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="github" />
+      <option name="name" value="GitHub BibhuBhushan Apache Maven Packages" />
       <option name="url" value="https://maven.pkg.github.com/BibhuBhushan/superBlackCat" />
     </remote-repository>
     <remote-repository>

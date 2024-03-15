@@ -80,7 +80,15 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-crypto</artifactId>
 		</dependency>
-
 	</dependencies>
+
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>superBlackCat</name>
+			<url>https://maven.pkg.github.com/bibhu042403/superBlackCat</url>
+		</repository>
+	</distributionManagement>
+
 
 </project>
